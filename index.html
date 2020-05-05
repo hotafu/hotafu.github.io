@@ -319,7 +319,7 @@
                           </div>
                         </div>
                         <div class="col-md-12">
-                          <button type="submit" class="button button-a button-big button-rouded">Gửi thông tin</button>
+                          <button type="submit" name="submit" class="button button-a button-big button-rouded">Gửi thông tin</button>
                         </div>
                       </div>
                     </form>
@@ -401,10 +401,9 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script type="text/javascript">
- $(document).ready(function()
- {
+  <script type="text/javascript">
+  $(document).ready(function()
+  {
    var submit = $("button[type='submit']");
    submit.click(function()
                {
@@ -427,8 +426,8 @@
     });
     return false;
    });
- });
-</script>
+  });
+  </script>
 
 </body>
 </html>
