@@ -23,7 +23,7 @@ function postToGoogle() {
       success: function(d)
   {}, //do đã bảo ở trên là nó ko cho cross đâu, nên khi gửi data xong ko trả về success được, ko cần điền cái này nhé
       error: function(x, y, z) {
-          $('#success-msg').show(); //hiện ra cái mess báo thành công khi gửi xong
+          $('#sendmessage').show(); //hiện ra cái mess báo thành công khi gửi xong
       }
   });
 
