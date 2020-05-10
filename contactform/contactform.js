@@ -94,21 +94,35 @@ jQuery(document).ready(function($) {
     if( ! action ) {
       action = 'contactform/contactform.php';
     }
+
+    var email = $("#email").val();
+    var hoten = $("#hoten").val();
+    var tieude = $("#tieude").val();
+    var noidung = $("#noidung").val();
     $.ajax({
       type: "POST",
-      url: action,
-      data: str,
+      url: "https://docs.google.com/forms/d/e/1FAIpQLSeRmIc2JidpLcoiB0Ki-Erv3XlXU3ExZTAZacpN8K2qP2jVug/formResponse?",
+      data: { //gán các giá trị tương ứng vào các Input name tương ứng đã lấy ở trên
+          "emailAddress": email,
+          "entry.508196069": hoten,
+          "entry.5929986": tieude,
+          "entry.368243065": noidung
+      },
+      dataType: "jsonp",
       success: function(msg) {
         // alert(msg);
         if (msg == 'OK') {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");
+
         } else {
           $("#sendmessage").removeClass("show");
           $("#errormessage").addClass("show");
           $('#errormessage').html(msg);
+          $('#sendmessage').show();
         }
+
 
       }
     });
