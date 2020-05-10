@@ -1,36 +1,3 @@
-/*post google sheet*/
-function postToGoogle() {
-  //Xử lý lấy dữ liệu các input vào biến tương ứng thông qua ID của input
-  var email = $("#email").val();
-  var hoten = $("#hoten").val();
-  var tieude = $("#tieude").val();
-  var noidung = $("#noidung").val();
-  //Đoạn giữa này có thể sử dụng để validate dữ liệu 1 lần nữa hoăc... bỏ qua nhé :D
-
-  //Xử lý gửi dữ liệu lên form
-  $.ajax({
-      //Chỉ định đích gửi dữ liệu đến: là form response đã tạo ở trên
-      url: "https://docs.google.com/forms/d/e/1FAIpQLSeRmIc2JidpLcoiB0Ki-Erv3XlXU3ExZTAZacpN8K2qP2jVug/formResponse?",
-      //URL lấy từ link đã note ở trên nhé
-      data: { //gán các giá trị tương ứng vào các Input name tương ứng đã lấy ở trên
-          "emailAddress": email,
-          "entry.508196069": hoten,
-          "entry.5929986": tieude,
-          "entry.368243065": noidung
-      },
-      type: "POST",
-      dataType: "jsonp", //các bạn có thể để xml, nhưng khi bật console lên sẽ thấy báo đỏ lòm vì ko cho cross, còn cái này nó vẫn cảnh báo nhưng màu xám thôi, ko đỏ :v
-      success: function(d)
-  {}, //do đã bảo ở trên là nó ko cho cross đâu, nên khi gửi data xong ko trả về success được, ko cần điền cái này nhé
-      error: function(x, y, z) {
-          //$('#sendmessage').show(); //hiện ra cái mess báo thành công khi gửi xong
-      }
-  });
-
-  return false;
-}
-/*End post google sheet*/
-
 /*global $, jQuery, alert*/
 $(document).ready(function() {
 
@@ -112,7 +79,7 @@ $(document).ready(function() {
 
   $(function() {
     typed.typed({
-      strings: ["Alex Smith.", "Designer.", "Developer.", "Freelancer.", "Photographer"],
+      strings: ["Hotafu.", "Designer.", "Developer."],
       typeSpeed: 100,
       loop: true,
     });
