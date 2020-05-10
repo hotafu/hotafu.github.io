@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
         "entry.368243065": noidung
       },
       success: function(msg) {
-        // alert(msg);
+        alert(msg);
         if (msg == 'OK') {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
