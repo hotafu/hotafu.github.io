@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
       },
       error: function(x, y, z) {
           $('#sendmessage').show(); //hiện ra cái mess báo thành công khi gửi xong
-          $('#email').val();
+          $('.form-control').val();
       }
     });
     return false;
