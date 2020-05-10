@@ -90,7 +90,6 @@ jQuery(document).ready(function($) {
     });
     if (ferror) return false;
     else var str = $(this).serialize();
-
     var action = $(this).attr('action');
     if( ! action ) {
       action = 'contactform/contactform.php';
@@ -110,7 +109,7 @@ jQuery(document).ready(function($) {
       },
       dataType: "jsonp",
       success: function(msg) {
-        // alert(msg);
+        alert(msg);
         if (msg == 'OK') {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
