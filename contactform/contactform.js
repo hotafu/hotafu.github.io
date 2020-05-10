@@ -89,24 +89,26 @@ jQuery(document).ready(function($) {
       }
     });
     if (ferror) return false;
-    else var str = { //gán các giá trị tương ứng vào các Input name tương ứng đã lấy ở trên
-        "emailAddress": email,
-        "entry.508196069": hoten,
-        "entry.5929986": tieude,
-        "entry.368243065": noidung
+    else { //gán các giá trị tương ứng vào các Input name tương ứng đã lấy ở trên
+      var email = $("#email").val();
+      var hoten = $("#hoten").val();
+      var tieude = $("#tieude").val();
+      var noidung = $("#noidung").val();
     };
     var action = $(this).attr('action');
     if( ! action ) {
       action = 'https://docs.google.com/forms/d/e/1FAIpQLSeRmIc2JidpLcoiB0Ki-Erv3XlXU3ExZTAZacpN8K2qP2jVug/formResponse?';
     }
-    var email = $("#email").val();
-    var hoten = $("#hoten").val();
-    var tieude = $("#tieude").val();
-    var noidung = $("#noidung").val();
+
     $.ajax({
       type: "POST",
       url: action,
-      data: str,
+      data: {
+        "emailAddress": email,
+        "entry.508196069": hoten,
+        "entry.5929986": tieude,
+        "entry.368243065": noidung
+      },
       success: function(msg) {
         // alert(msg);
         if (msg == 'OK') {
