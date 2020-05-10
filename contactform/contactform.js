@@ -89,45 +89,26 @@ jQuery(document).ready(function($) {
       }
     });
     if (ferror) return false;
-<<<<<<< HEAD
-    else
-      { var str = $(this).serialize();
-        var email = $("#email").val();
-        var hoten = $("#hoten").val();
-        var tieude = $("#tieude").val();
-        var noidung = $("#noidung").val();
-        $.ajax({
-          type: "POST",
-          url: "https://docs.google.com/forms/d/e/1FAIpQLSeRmIc2JidpLcoiB0Ki-Erv3XlXU3ExZTAZacpN8K2qP2jVug/formResponse?",
-          data: { //gán các giá trị tương ứng vào các Input name tương ứng đã lấy ở trên
-              "emailAddress": email,
-              "entry.508196069": hoten,
-              "entry.5929986": tieude,
-              "entry.368243065": noidung
-          },
-          dataType: "json",
-          success: function(msg) {
-            // alert(msg);
-            $("#sendmessage").addClass("show");
-
-            }
-
-
-          }
-        });
-    /*var action = $(this).attr('action');
-    if( ! action ) {
-      action = 'contactform/contactform.php';*/
-=======
     else var str = $(this).serialize();
+
     var action = $(this).attr('action');
     if( ! action ) {
       action = 'contactform/contactform.php';
     }
+    var email = $("#email").val();
+    var hoten = $("#hoten").val();
+    var tieude = $("#tieude").val();
+    var noidung = $("#noidung").val();
     $.ajax({
       type: "POST",
-      url: action,
-      data: str,
+      url: "https://docs.google.com/forms/d/e/1FAIpQLSeRmIc2JidpLcoiB0Ki-Erv3XlXU3ExZTAZacpN8K2qP2jVug/formResponse?",
+      data: { //gán các giá trị tương ứng vào các Input name tương ứng đã lấy ở trên
+          "emailAddress": email,
+          "entry.508196069": hoten,
+          "entry.5929986": tieude,
+          "entry.368243065": noidung
+      },
+      dataType: "jsonp",
       success: function(msg) {
         // alert(msg);
         if (msg == 'OK') {
@@ -139,8 +120,6 @@ jQuery(document).ready(function($) {
           $("#errormessage").addClass("show");
           $('#errormessage').html(msg);
         }
-
->>>>>>> parent of da886c8... Update contactform.js
       }
     }
     return false;
