@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
         "entry.368243065": noidung
       },
       success: function(msg) {
-        
+
         //alert(msg);
         /*if (msg == 'OK') {
           $("#sendmessage").addClass("show");
@@ -122,6 +122,9 @@ jQuery(document).ready(function($) {
           $('#errormessage').html(msg);
         }*/
 
+      },
+      error: function(x, y, z) {
+          $('#sendmessage').show(); //hiện ra cái mess báo thành công khi gửi xong
       }
     });
     return false;
