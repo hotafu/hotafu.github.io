@@ -127,8 +127,8 @@ jQuery(document).ready(function($) {
           $('#sendmessage').show(); //hiện ra cái mess báo thành công khi gửi xong
           $('#email').val();
           $('#hoten').val();
-          $('#tieude').val();
-          $('#noidung').val();
+          //$('#tieude').val();
+          //$('#noidung').val();
       }
     });
     return false;
