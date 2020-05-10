@@ -107,7 +107,7 @@ jQuery(document).ready(function($) {
           "entry.5929986": tieude,
           "entry.368243065": noidung
       },
-      dataType: "jsonp",
+      dataType: "json",
       success: function(msg) {
         alert(msg);
         if (msg == 'OK') {
